@@ -1,9 +1,26 @@
-from sdl2_nim import setClipboardText, hasClipboardText
+from sdl2/sdl import setClipboardText, hasClipboardText, init, INIT_VIDEO, quit
 
 proc clip*(text: string): bool =
+  ## Copies input text to clipboard.
+  ## False on empty input text and
+  ## on empty clipboard after copy.
+  ## True on success.
   if text != "":
-    text.setClipboardText
+    let 
+      init = sdl.init(INIT_VIDEO)
+      copied = text.setClipboardText
+    if copied == 0:
+      sdl.quit()
+      return true
+    else:
+      # If text failed to be
+      # clipboarded.
+      sdl.quit()
+      return false
   else:
-    "Input text cannot be empty!".quit
-  if not hasClipboardText:
-    "Copy to clipboard has failed.".quit
+    # If text is empty.
+    return false
+  if not hasClipboardText():
+    # If clipboard is empty or
+    # does not exist.
+    return false
