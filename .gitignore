@@ -7,6 +7,12 @@
 nimcache/
 nimblecache/
 htmldocs/
+# Testing #
+mywinbuild.sh
+testi
+testi.nim
+cringify_text
+cringify_text.nim.bak
 
 # ---> Linux
 *~
