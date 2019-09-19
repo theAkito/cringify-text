@@ -1,14 +1,13 @@
 import clipper
-from unicode import add, runeAt, runeLen, toUpper
+from unicode import add, runeAt, runeLen, toUpper, toLower
 from strutils import multireplace
 
 proc getText(): string =
-  let text: string = stdin.readLine
-  case text
-  of "", "\n", " \n":
-    "Text cannot be empty.".echo
-  else:
-    return text
+  var text: string = ""
+  while text == "" or text == "\n" or text == " ":
+    "Post your text:".echo
+    text = stdin.readLine
+  return text.toLower
 
 proc cringify() =
   let
@@ -24,10 +23,8 @@ proc cringify() =
     itimStd += 2
     itimUp += 2
     iter.inc
-    if itimUp >= inputText.runeLen:
-      break
-    elif itimStd >= inputText.runeLen:
-      break
+    if itimUp >= inputText.runeLen: break
+    elif itimStd >= inputText.runeLen: break
   cringifiedText = cringifiedText.multireplace(replacements = ("i", "ii"), ("I", "ii"))
   discard cringifiedText.clip()
 
