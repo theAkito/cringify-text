@@ -1,4 +1,4 @@
-from sdl2/sdl import setClipboardText, hasClipboardText, init, INIT_VIDEO, quit
+from sdl2_nim/sdl import setClipboardText, hasClipboardText, init, INIT_VIDEO, quit
 
 proc clip*(text: string): bool =
   ## Copies input text to clipboard.

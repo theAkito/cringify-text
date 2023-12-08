@@ -3,16 +3,19 @@
 .*.kate-swp
 .swp.*
 
+# ---> Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
 # ---> Nim
 nimcache/
 nimblecache/
 htmldocs/
-# Testing #
-mywinbuild.sh
-testi
-testi.nim
-cringify_text
-cringify_text.nim.bak
 
 # ---> Linux
 *~
@@ -29,3 +32,6 @@ cringify_text.nim.bak
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
+# ---> Custom
+/cringify_text
+cringify_text.exe

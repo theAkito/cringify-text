@@ -13,4 +13,21 @@ This app converts your provided text into cRiiNgE mOdE.
 > This is a Nim module that takes files as arguments and outputs their respective Fletcher checksum. The Fletcher checksum has a bit lower error detection reliability than for example the well known CRC-32 but it is generally a lot faster than for example CRC-32 as well as Adler-32. The project's goal is to provide a very fast checksum algorithm to be used on devices like the Raspberry Pi.
 
 **After:**
-> tHiiS iis a niim mOdUlE ThAt tAkEs fiilEs aS ArGuMeNtS AnD OuTpUtS ThEiiR ReSpEcTiiVe fLeTcHeR ChEcKsUm. ThE FlEtChEr cHeCkSuM HaS A BiiT LoWeR ErRoR DeTeCtiioN ReLiiAbiiliitY ThAn fOr eXaMpLe tHe wElL KnOwN CrC-32 bUt iiT iis gEnErAlLy a lOt fAsTeR ThAn fOr eXaMpLe cRc-32 As wElL As aDlEr-32. tHe pRoJeCt's gOaL iis tO PrOviidE A VeRy fAsT ChEcKsUm aLgOriitHm tO Be uSeD On dEviicEs liikE ThE RaSpBeRrY Pii.
+> tHiiS iiS a niiM mOdUlE tHaT tAkEs fiiLeS aS aRgUmEnTs aNd oUtPuTs tHeiiR rEsPeCtiiVe fLeTcHeR cHeCkSuM. tHe fLeTcHeR cHeCkSuM hAs a biiT lOwEr eRrOr dEtEcTiiOn rEliiAbiiLiiTy tHaN fOr eXaMpLe tHe wElL kNoWn cRc-32 bUt iiT iiS gEnErAlLy a lOt fAsTeR tHaN fOr eXaMpLe cRc-32 aS wElL aS aDlEr-32. tHe pRoJeCt's gOaL iiS tO pRoViiDe a vErY fAsT cHeCkSuM aLgOriiThM tO bE uSeD oN dEviiCeS liiKe tHe rAsPbErRy pii.
+
+
+## License
+Copyright © 2019-2023  Akito <the@akito.ooo>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.

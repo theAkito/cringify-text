@@ -1,31 +1,37 @@
 import clipper
-from unicode import add, runeAt, runeLen, toUpper, toLower
-from strutils import multireplace
+from unicode import `==`, add, runes, runeLen, toUpper, toLower, toRunes, isWhiteSpace
+from strutils import multireplace, isEmptyOrWhitespace
 
 proc getText(): string =
   var text: string = ""
-  while text == "" or text == "\n" or text == " ":
+  while text == "" or text == "\n" or text.isEmptyOrWhitespace:
     "Post your text:".echo
     text = stdin.readLine
   return text.toLower
 
-proc cringify() =
-  let
-    inputText: string = getText()
-  var
-    iter = 0
-    itimStd = 0
-    itimUp = 1
-    cringifiedText: string
-  while iter <= inputText.runeLen:
-    cringifiedText.add(inputText.runeAt(itimStd))
-    cringifiedText.add(inputText.runeAt(itimUp).toUpper)
-    itimStd += 2
-    itimUp += 2
-    iter.inc
-    if itimUp >= inputText.runeLen: break
-    elif itimStd >= inputText.runeLen: break
-  cringifiedText = cringifiedText.multireplace(replacements = ("i", "ii"), ("I", "ii"))
-  discard cringifiedText.clip()
+proc cringify: string {.discardable.} =
+  let input: string = getText()
+  var lastWasUpped = true
+  result = newStringOfCap(input.runeLen)
+  for rune in input.runes:
+    if rune.isWhiteSpace:
+      result.add rune
+      lastWasUpped = true
+      continue
+    if rune == "i".toRunes()[0]:
+      result.add "ii"
+      lastWasUpped = false
+      continue
+    elif rune == "I".toRunes()[0]:
+      result.add "ii"
+      lastWasUpped = false
+      continue
+    if lastWasUpped:
+      result.add rune
+      lastWasUpped = not lastWasUpped
+    else:
+      result.add rune.toUpper
+      lastWasUpped = true
+  discard result.clip()
 
 cringify()
