@@ -6,9 +6,8 @@ proc clip*(text: string): bool =
   ## on empty clipboard after copy.
   ## True on success.
   if text != "":
-    let 
-      init = sdl.init(INIT_VIDEO)
-      copied = text.setClipboardText
+    discard sdl.init(INIT_VIDEO)
+    let copied = text.setClipboardText
     if copied == 0:
       sdl.quit()
       return true

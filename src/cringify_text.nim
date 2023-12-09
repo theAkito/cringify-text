@@ -18,11 +18,7 @@ proc cringify: string {.discardable.} =
       result.add rune
       lastWasUpped = true
       continue
-    if rune == "i".toRunes()[0]:
-      result.add "ii"
-      lastWasUpped = false
-      continue
-    elif rune == "I".toRunes()[0]:
+    if rune == "i".toRunes()[0] or rune == "I".toRunes()[0]:
       result.add "ii"
       lastWasUpped = false
       continue
